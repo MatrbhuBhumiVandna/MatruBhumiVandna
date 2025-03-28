@@ -1,97 +1,815 @@
-/* Updated Color Scheme */
+/* styles.css */
 :root {
-    --primary-color: #800020; /* Dark Maroon */
-    --secondary-color: #FFFFF0; /* Ivory */
-    --accent-color: #D4AF37; /* Golden */
-    --dark-color: #321414; /* Darker Maroon */
-    --light-color: #F9F5F0; /* Light Ivory */
-    --white-color: #FFFFFF;
-    --text-color: #321414;
-    --text-light: #666;
-    --border-color: #D4AF37; /* Golden border */
-    --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    --transition: all 0.3s ease;
+    --primary-color: #8B0000; /* Dark Red */
+    --secondary-color: #F5F5DC; /* Ivory */
+    --accent-color: #FFDAB9; /* Peach */
+    --text-color: #333;
+    --light-text: #fff;
+    --dark-maroon: #5E1914;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --border-color: #ddd;
 }
 
-/* Header Styling */
-.header {
-    background-color: var(--primary-color);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.page-logo {
-    color: var(--secondary-color);
-}
-
-.nav-item a {
-    color: var(--secondary-color);
-}
-
-.nav-item.active a,
-.nav-item a:hover {
-    color: var(--accent-color);
-}
-
-.hamburger .bar {
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
     background-color: var(--secondary-color);
+    line-height: 1.6;
 }
 
-/* Footer Styling */
-.footer {
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
+h1, h2, h3, h4 {
+    font-family: 'Patua One', cursive;
+    color: var(--dark-maroon);
 }
 
-.footer-section.links ul li a,
-.footer-bottom {
-    color: var(--secondary-color);
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
-.footer-section.social .social-links a {
-    background: rgba(255, 255, 240, 0.2);
-}
-
-.footer-section.social .social-links a:hover {
-    background: var(--accent-color);
-}
-
-/* Buttons */
 .btn {
-    background-color: var(--accent-color);
-    color: var(--dark-color);
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
 }
 
 .btn:hover {
-    background-color: #B8860B; /* Darker Gold */
-    color: var(--secondary-color);
+    background-color: var(--dark-maroon);
+    transform: translateY(-2px);
 }
 
-/* Countdown Boxes */
-.countdown-box {
-    background: var(--primary-color);
-    border: 2px solid var(--accent-color);
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-/* Add these new styles to your existing CSS */
-.phone-link {
-    color: var(--secondary-color);
-    transition: var(--transition);
+/* Header Styles */
+header {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow);
 }
 
-.phone-link:hover {
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 60px;
+    margin-right: 15px;
+}
+
+.page-logo {
+    font-family: 'Patua One', cursive;
+    font-size: 1.5rem;
+    color: var(--light-text);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+.nav-item {
+    margin-left: 1.5rem;
+    position: relative;
+}
+
+.nav-link {
+    color: var(--light-text);
+    font-weight: 500;
+    transition: color 0.3s ease;
+    padding: 0.5rem 0;
+}
+
+.nav-link:hover {
     color: var(--accent-color);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.highlighted {
+    background-color: var(--accent-color);
+    color: var(--dark-maroon);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 600;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 218, 185, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(255, 218, 185, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 218, 185, 0);
+    }
+}
+
+.social-icons {
+    display: flex;
+    margin-left: 1.5rem;
+}
+
+.social-icon {
+    margin-left: 1rem;
+    font-size: 1.2rem;
+    color: var(--light-text);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: var(--accent-color);
+    transform: translateY(-3px);
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--light-text);
+    padding: 0 2rem;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--light-text);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--accent-color);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--light-text);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Page Hero */
+.page-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--light-text);
+}
+
+.page-hero h1 {
+    font-size: 3.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Content Sections */
+.content-section {
+    padding: 4rem 0;
+}
+
+.content-section.alt-bg {
+    background-color: var(--light-text);
+}
+
+/* Countdown Section */
+.countdown-section {
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color: var(--light-text);
+}
+
+.countdown-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+}
+
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.countdown-box {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    padding: 1.5rem;
+    border-radius: 8px;
+    min-width: 120px;
+    box-shadow: var(--shadow);
+}
+
+.countdown-box span {
+    font-size: 2.5rem;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.countdown-box p {
+    font-size: 1rem;
+    margin: 0;
+}
+
+.event-date {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--dark-maroon);
+}
+
+/* Patriots Section */
+.patriots-section {
+    padding: 4rem 2rem;
+    background-color: var(--secondary-color);
+    text-align: center;
+}
+
+.patriots-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+}
+
+.patriots-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.patriot-card {
+    background-color: var(--light-text);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.patriot-card:hover {
+    transform: translateY(-10px);
+}
+
+.patriot-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.patriot-card h3 {
+    padding: 1rem 1rem 0.5rem;
+    color: var(--primary-color);
+}
+
+.patriot-card p {
+    padding: 0 1rem 1.5rem;
+    color: var(--text-color);
+}
+
+/* Styled Lists */
+.styled-list {
+    list-style-type: none;
+    margin: 1rem 0;
+}
+
+.styled-list li {
+    padding: 0.5rem 0;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.styled-list li::before {
+    content: '•';
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Mission Items */
+.mission-item {
+    margin-bottom: 2rem;
+}
+
+.mission-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+/* Values Grid */
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.value-card {
+    background-color: var(--light-text);
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+}
+
+.value-card i {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.value-card h3 {
+    margin-bottom: 0.5rem;
+}
+
+/* Timeline */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background-color: var(--primary-color);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1px;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+}
+
+.timeline-year {
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    border-radius: 20px;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content {
+    padding: 1rem;
+    background-color: var(--light-text);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: var(--light-text);
+    border: 4px solid var(--primary-color);
+    border-radius: 50%;
+    top: 15px;
+    z-index: 1;
+}
+
+.timeline-item:nth-child(odd)::after {
+    right: -10px;
+}
+
+.timeline-item:nth-child(even)::after {
+    left: -10px;
+}
+
+/* Ticket Prices */
+.ticket-prices {
+    margin: 2rem 0;
+}
+
+.ticket-prices table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+}
+
+.ticket-prices th, .ticket-prices td {
+    padding: 0.8rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.ticket-prices th {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+}
+
+.ticket-prices tr:nth-child(even) {
+    background-color: rgba(139, 0, 0, 0.05);
+}
+
+.booking-info {
+    margin-top: 1.5rem;
+}
+
+.booking-info p {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.booking-info i {
+    margin-right: 0.5rem;
+    color: var(--primary-color);
+}
+
+/* Gallery */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Footer Styles */
+footer {
+    background-color: var(--dark-maroon);
+    color: var(--light-text);
+    padding: 3rem 2rem 1rem;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.footer-logo {
+    font-family: 'Patua One', cursive;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.footer-about p {
+    margin-bottom: 1rem;
+}
+
+.footer-links h3, .footer-contact h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    color: var(--accent-color);
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--accent-color);
+}
+
+.contact-info {
+    margin-bottom: 1rem;
+}
+
+.contact-info p {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.contact-info i {
+    margin-right: 0.5rem;
+    color: var(--accent-color);
+}
+
+.footer-social {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.footer-social a {
+    color: var(--light-text);
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: var(--accent-color);
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.site-admin {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.site-admin a {
+    color: var(--accent-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.site-admin a:hover {
+    color: var(--light-text);
     text-decoration: underline;
 }
 
-/* Admin Preview Section */
-.preview-section {
-    border: 2px solid var(--accent-color);
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    overflow: auto;
+}
+
+.modal-content {
     background-color: var(--secondary-color);
-    color: var(--dark-color);
+    margin: 10% auto;
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-.preview-title {
+.close {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close:hover {
     color: var(--primary-color);
-    border-bottom: 1px solid var(--accent-color);
 }
 
-/* Add any additional styles from the previous CSS that you want to keep */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .nav-menu {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background-color: var(--primary-color);
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 0;
+        transition: left 0.5s ease;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-item {
+        margin: 1rem 0;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .page-hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .timeline::before {
+        left: 31px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+
+    .timeline-item:nth-child(even) {
+        left: 0;
+    }
+
+    .timeline-item::after {
+        left: 21px;
+    }
+
+    .timeline-item:nth-child(odd)::after {
+        right: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        height: 70vh;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .countdown-box {
+        min-width: 100px;
+        padding: 1rem;
+    }
+
+    .countdown-box span {
+        font-size: 2rem;
+    }
+
+    .page-hero {
+        height: 30vh;
+    }
+
+    .page-hero h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero {
+        height: 60vh;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .countdown-container {
+        gap: 1rem;
+    }
+
+    .countdown-box {
+        min-width: 80px;
+        padding: 0.8rem;
+    }
+
+    .countdown-box span {
+        font-size: 1.5rem;
+    }
+
+    .countdown-box p {
+        font-size: 0.8rem;
+    }
+
+    .event-date {
+        font-size: 1rem;
+    }
+
+    .page-hero h1 {
+        font-size: 1.8rem;
+    }
+}
