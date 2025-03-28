@@ -3,161 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Panel - Matru Bhumi Vandana Trust</title>
+    <title>Admin Panel - Matru Bhumi Vandana</title>
+    <link rel="stylesheet" href="./assets/css/admin.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/admin.css">
 </head>
 <body>
     <div class="admin-container">
-        <aside class="admin-sidebar">
-            <div class="admin-logo">
-                <h2>MBVT Admin</h2>
-            </div>
-            <nav class="admin-nav">
-                <ul>
-                    <li><a href="#" class="active" data-section="dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
-                    <li><a href="#" data-section="home"><i class="fas fa-home"></i> Home Page</a></li>
-                    <li><a href="#" data-section="about"><i class="fas fa-info-circle"></i> About Us</a></li>
-                    <li><a href="#" data-section="who-we-are"><i class="fas fa-users"></i> Who We Are</a></li>
-                    <li><a href="#" data-section="events"><i class="fas fa-calendar-alt"></i> Events</a></li>
-                    <li><a href="#" data-section="media"><i class="fas fa-images"></i> Media Upload</a></li>
-                    <li><a href="#" data-section="settings"><i class="fas fa-cog"></i> Settings</a></li>
-                </ul>
-            </nav>
-        </aside>
-
-        <main class="admin-main">
-            <header class="admin-header">
-                <h1 id="admin-section-title">Dashboard</h1>
-                <div class="admin-actions">
-                    <button id="save-changes" class="btn"><i class="fas fa-save"></i> Save Changes</button>
-                    <button id="preview-changes" class="btn"><i class="fas fa-eye"></i> Preview</button>
-                    <button id="logout" class="btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
-                </div>
-            </header>
-
-            <div class="admin-content" id="dashboard-section">
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <h3>Page Views</h3>
-                        <p>1,245</p>
-                    </div>
-                    <div class="stat-card">
-                        <h3>Event Registrations</h3>
-                        <p>328</p>
-                    </div>
-                    <div class="stat-card">
-                        <h3>Donations</h3>
-                        <p>₹1,52,000</p>
-                    </div>
-                    <div class="stat-card">
-                        <h3>Last Updated</h3>
-                        <p>2 days ago</p>
-                    </div>
-                </div>
-
-                <div class="recent-activity">
-                    <h2>Recent Activity</h2>
-                    <ul>
-                        <li>Updated About Us page - 2 days ago</li>
-                        <li>Added new event photos - 3 days ago</li>
-                        <li>Modified ticket prices - 1 week ago</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Home Page Editor -->
-            <div class="admin-content hidden" id="home-section">
-                <h2>Home Page Editor</h2>
-                <div class="form-group">
-                    <label for="hero-title">Hero Title</label>
-                    <input type="text" id="hero-title" value="World's Biggest Temple of Bharat Mata">
-                </div>
-                <div class="form-group">
-                    <label for="hero-subtitle">Hero Subtitle</label>
-                    <input type="text" id="hero-subtitle" value="Under the 'Matru Bhumi Vandna Trust'">
-                </div>
-                <div class="form-group">
-                    <label for="countdown-enabled">Enable Countdown</label>
-                    <input type="checkbox" id="countdown-enabled" checked>
-                </div>
-                <div class="form-group">
-                    <label for="event-start">Event Start Date & Time</label>
-                    <input type="datetime-local" id="event-start" value="2025-05-02T20:00">
-                </div>
-                <div class="form-group">
-                    <label for="event-end">Event End Date</label>
-                    <input type="date" id="event-end" value="2025-05-08">
-                </div>
-                <div class="form-group">
-                    <label>Patriots Showcase</label>
-                    <div id="patriots-editor">
-                        <!-- Patriots will be loaded here -->
-                    </div>
-                    <button id="add-patriot" class="btn"><i class="fas fa-plus"></i> Add Patriot</button>
-                </div>
-            </div>
-
+        <h1>Website Content Management</h1>
+        
+        <div class="admin-tabs">
+            <button class="tab-btn active" data-tab="about">About Us</button>
+            <button class="tab-btn" data-tab="who-we-are">Who We Are</button>
+            <button class="tab-btn" data-tab="events">Events</button>
+            <button class="tab-btn" data-tab="media">Media Upload</button>
+        </div>
+        
+        <div id="about" class="tab-content active">
             <!-- About Us Editor -->
-            <div class="admin-content hidden" id="about-section">
-                <h2>About Us Editor</h2>
-                <div class="form-group">
-                    <label for="vision">Our Vision</label>
-                    <textarea id="vision" rows="5">To establish a spiritual and cultural epicenter in Morbi, Gujarat, that:
-Honors our motherland through the world's largest Bharat Mata Temple.
-Revives ancient Indian wisdom through a modern Gurukul system.
-Becomes a global beacon for nationalism and Sanatan Dharma values.
-Preserves and propagates the principles of Arya Samaj for contemporary society.</textarea>
-                </div>
-                <!-- More form groups for other sections -->
-            </div>
-
-            <!-- Media Upload Section -->
-            <div class="admin-content hidden" id="media-section">
-                <h2>Media Upload</h2>
-                <div class="upload-area">
-                    <h3>Upload Images</h3>
-                    <input type="file" id="image-upload" accept="image/*" multiple>
-                    <button id="upload-images" class="btn"><i class="fas fa-upload"></i> Upload Images</button>
-                    
-                    <h3>Upload Videos</h3>
-                    <input type="file" id="video-upload" accept="video/*" multiple>
-                    <button id="upload-videos" class="btn"><i class="fas fa-upload"></i> Upload Videos</button>
-                </div>
-                
-                <div class="media-library">
-                    <h3>Media Library</h3>
-                    <div class="media-grid">
-                        <!-- Media items will be loaded here -->
-                    </div>
-                </div>
-            </div>
-        </main>
+        </div>
+        
+        <div id="who-we-are" class="tab-content">
+            <!-- Who We Are Editor -->
+        </div>
+        
+        <div id="events" class="tab-content">
+            <!-- Events Editor -->
+        </div>
+        
+        <div id="media" class="tab-content">
+            <!-- Media Uploader -->
+        </div>
+        
+        <div class="admin-actions">
+            <button id="preview-btn" class="btn">Preview Changes</button>
+            <button id="save-btn" class="btn primary">Save Changes</button>
+            <button id="undo-btn" class="btn">Undo</button>
+        </div>
     </div>
 
     <!-- Preview Modal -->
-    <div id="previewModal" class="modal">
-        <div class="modal-content large">
+    <div id="preview-modal" class="modal">
+        <div class="modal-content">
             <span class="close">&times;</span>
             <h2>Preview Changes</h2>
-            <div class="preview-container">
-                <div class="old-content">
-                    <h3>Current Content</h3>
+            <div class="comparison">
+                <div class="old-version">
+                    <h3>Current Version</h3>
                     <div id="old-content"></div>
                 </div>
-                <div class="new-content">
-                    <h3>New Content</h3>
+                <div class="new-version">
+                    <h3>New Version</h3>
                     <div id="new-content"></div>
                 </div>
             </div>
             <div class="modal-actions">
-                <button id="confirm-save" class="btn">Save Changes</button>
+                <button id="confirm-save" class="btn primary">Save Changes</button>
                 <button id="cancel-changes" class="btn">Cancel</button>
             </div>
         </div>
     </div>
 
-    <script src="assets/js/admin.js"></script>
+    <script src="./assets/js/admin.js"></script>
 </body>
 </html>
