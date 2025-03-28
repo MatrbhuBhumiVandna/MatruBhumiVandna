@@ -1,62 +1,59 @@
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section about">
-                    <h3>About Matru Bhumi Vandna</h3>
-                    <p>Building the World's biggest Temple of Bharat Mata in Morbi, Gujarat to honor our motherland and preserve Indian culture.</p>
-                    <div class="contact">
-                        <span><i class="fas fa-phone"></i> +9194299 12689, +9194299 12489</span>
-                        <span><i class="fas fa-envelope"></i> info@matrubhumivandna.org</span>
-                        <span><i class="fas fa-map-marker-alt"></i> Shop No.57, Capital Market, Beside ICICI Bank, Rawapar Chowk, Morbi</span>
-                    </div>
-                </div>
-                
-                <div class="footer-section links">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="who-we-are.html">Who We Are</a></li>
-                        <li><a href="events.html">Upcoming Events</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                        <li><a href="#" id="admin-login-link">Site Admin</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section social">
-                    <h3>Connect With Us</h3>
-                    <div class="social-links">
-                        <a href="https://www.instagram.com/matrubhumi_official/?hl=en" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.facebook.com/profile.php?id=61558235197338" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    </div>
-                </div>
+<footer>
+    <div class="footer-container">
+        <div class="footer-about">
+            <div class="footer-logo">MATRU BHUMI VANDNA</div>
+            <p>Building the world's biggest Bharat Mata Temple in Morbi, Gujarat to honor our motherland and preserve our cultural heritage.</p>
+            <div class="footer-social">
+                <a href="https://www.facebook.com/profile.php?id=61558235197338" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/matrubhumi_official/?hl=en" target="_blank"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
         
-        <div class="footer-bottom">
-            &copy; 2024 Matru Bhumi Vandna Trust. All Rights Reserved.
+        <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="who-we-are.html">Who We Are</a></li>
+                <li><a href="events.html">Upcoming Events</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
         </div>
-    </footer>
-
-    <!-- Admin Login Modal -->
-    <div id="admin-login-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2>Admin Login</h2>
-            <form id="admin-login-form">
-                <div class="form-group">
-                    <label for="username">Username:</label>
-                    <input type="text" id="username" name="username" required>
-                </div>
-                <div class="form-group">
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" required>
-                </div>
-                <button type="submit" class="btn">Login</button>
-            </form>
+        
+        <div class="footer-contact">
+            <h3>Contact Us</h3>
+            <div class="contact-info">
+                <p><i class="fas fa-map-marker-alt"></i> Matrubhumi Vandana Trust-Morbi, Shop No.57, Capital Market, Beside ICICI Bank, Rawapar Chowk, Morbi.</p>
+                <p><i class="fas fa-phone"></i> +91 94299 12689</p>
+                <p><i class="fas fa-phone"></i> +91 94299 12489</p>
+            </div>
         </div>
     </div>
+    
+    <div class="copyright">
+        <p>&copy; <span id="current-year"></span> Matru Bhumi Vandana Trust. All Rights Reserved.</p>
+    </div>
+    
+    <div class="site-admin">
+        <a href="#" id="adminLoginLink">Site Admin</a>
+    </div>
+</footer>
 
-    <script src="js/main.js"></script>
-</body>
-</html>
+<!-- Admin Login Modal -->
+<div id="adminModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Admin Login</h2>
+        <form id="adminLoginForm">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit" class="btn">Login</button>
+        </form>
+    </div>
+</div>
