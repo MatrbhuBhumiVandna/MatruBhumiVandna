@@ -1,4 +1,70 @@
-// assets/js/script.js
+// Function to load JSON data
+async function loadData(file) {
+    const response = await fetch(`assets/data/${file}`);
+    return await response.json();
+}
+
+// Function to save JSON data
+async function saveData(file, data) {
+    await fetch(`assets/data/${file}`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data)
+    });
+}
+
+// Function to update page content
+async function updatePageContent() {
+    // Load data from JSON files
+    const aboutData = await loadData('about.json');
+    const eventsData = await loadData('events.json');
+    const patriotsData = await loadData('patriots.json');
+    
+    // Update about page
+    if (document.querySelector('.about-section')) {
+        document.getElementById('about-vision').textContent = aboutData.vision;
+        document.getElementById('about-mission').textContent = aboutData.mission;
+        document.getElementById('about-values').textContent = aboutData.values;
+    }
+    
+    // Update events page
+    if (document.querySelector('.event-details')) {
+        document.querySelector('.event-details h2').textContent = eventsData.title;
+        document.querySelector('.event-date').textContent = eventsData.dates;
+        document.querySelector('.event-details p').textContent = eventsData.description;
+        
+        // Update tickets table
+        const ticketsTable = document.querySelector('.tickets-table table tbody');
+        ticketsTable.innerHTML = '';
+        eventsData.tickets.forEach(ticket => {
+            const row = document.createElement('tr');
+            row.innerHTML = `<td>${ticket.category}</td><td>${ticket.price}</td>`;
+            ticketsTable.appendChild(row);
+        });
+    }
+    
+    // Update patriots gallery
+    if (document.querySelector('.patriots-grid')) {
+        const patriotsGrid = document.querySelector('.patriots-grid');
+        patriotsGrid.innerHTML = '';
+        patriotsData.forEach(patriot => {
+            const card = document.createElement('div');
+            card.className = 'patriot-card';
+            card.innerHTML = `
+                <div class="patriot-image">
+                    <img src="${patriot.image}" alt="${patriot.name}">
+                </div>
+                <div class="patriot-info">
+                    <h3>${patriot.name}</h3>
+                    <p>${patriot.info}</p>
+                </div>
+            `;
+            patriotsGrid.appendChild(card);
+        });
+    }
+}
 
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile menu toggle
@@ -40,69 +106,20 @@ document.addEventListener('DOMContentLoaded', function() {
         const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
         
-        document.getElementById('days').textContent = days.toString().padStart(2, '0');
-        document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-        document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-        document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        if (document.getElementById('days')) {
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
         
         if (distance < 0) {
             clearInterval(countdown);
-            document.querySelector('.countdown-container').innerHTML = '<div class="event-ended">The event has started!</div>';
+            if (document.querySelector('.countdown-container')) {
+                document.querySelector('.countdown-container').innerHTML = '<div class="event-ended">The event has started!</div>';
+            }
         }
     }, 1000);
-    
-    // Patriots data (in a real app, this would come from an API)
-    const patriots = [
-        {
-            name: "Bhagat Singh",
-            image: "assets/images/patriots/bhagat-singh.jpg",
-            info: "Revolutionary who fought against British rule and sacrificed his life for India's independence at the age of 23."
-        },
-        {
-            name: "Rani Lakshmibai",
-            image: "assets/images/patriots/rani-lakshmibai.jpg",
-            info: "The Queen of Jhansi who became a symbol of resistance to British rule during the Indian Rebellion of 1857."
-        },
-        {
-            name: "Subhash Chandra Bose",
-            image: "assets/images/patriots/netaji.jpg",
-            info: "Founder of the Indian National Army who fought for India's independence with the slogan 'Give me blood and I will give you freedom'."
-        },
-        {
-            name: "Sardar Patel",
-            image: "assets/images/patriots/sardar-patel.jpg",
-            info: "India's first Deputy Prime Minister who played a key role in the country's struggle for independence and political integration."
-        },
-        {
-            name: "Chandrashekhar Azad",
-            image: "assets/images/patriots/chandrashekhar-azad.jpg",
-            info: "Revolutionary who reorganised the Hindustan Republican Association and fought against British rule."
-        },
-        {
-            name: "Mahatma Gandhi",
-            image: "assets/images/patriots/mahatma-gandhi.jpg",
-            info: "Leader of the Indian independence movement who employed nonviolent resistance to lead India to independence."
-        }
-    ];
-    
-    // Load patriots into the grid
-    const patriotsGrid = document.querySelector('.patriots-grid');
-    if (patriotsGrid) {
-        patriots.forEach(patriot => {
-            const patriotCard = document.createElement('div');
-            patriotCard.className = 'patriot-card';
-            patriotCard.innerHTML = `
-                <div class="patriot-image">
-                    <img src="${patriot.image}" alt="${patriot.name}">
-                </div>
-                <div class="patriot-info">
-                    <h3>${patriot.name}</h3>
-                    <p>${patriot.info}</p>
-                </div>
-            `;
-            patriotsGrid.appendChild(patriotCard);
-        });
-    }
     
     // Admin login modal
     const adminLoginLink = document.getElementById('admin-login-link');
@@ -151,4 +168,7 @@ document.addEventListener('DOMContentLoaded', function() {
             this.reset();
         });
     }
+    
+    // Initialize page content
+    updatePageContent();
 });
