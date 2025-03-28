@@ -1,1 +1,32 @@
-
+[
+    {
+        "name": "Bhagat Singh",
+        "image": "assets/images/patriots/bhagat-singh.jpg",
+        "info": "Revolutionary who fought against British rule and sacrificed his life for India's independence at the age of 23."
+    },
+    {
+        "name": "Rani Lakshmibai",
+        "image": "assets/images/patriots/rani-lakshmibai.jpg",
+        "info": "The Queen of Jhansi who became a symbol of resistance to British rule during the Indian Rebellion of 1857."
+    },
+    {
+        "name": "Subhash Chandra Bose",
+        "image": "assets/images/patriots/netaji.jpg",
+        "info": "Founder of the Indian National Army who fought for India's independence with the slogan 'Give me blood and I will give you freedom'."
+    },
+    {
+        "name": "Sardar Patel",
+        "image": "assets/images/patriots/sardar-patel.jpg",
+        "info": "India's first Deputy Prime Minister who played a key role in the country's struggle for independence and political integration."
+    },
+    {
+        "name": "Chandrashekhar Azad",
+        "image": "assets/images/patriots/chandrashekhar-azad.jpg",
+        "info": "Revolutionary who reorganised the Hindustan Republican Association and fought against British rule."
+    },
+    {
+        "name": "Mahatma Gandhi",
+        "image": "assets/images/patriots/mahatma-gandhi.jpg",
+        "info": "Leader of the Indian independence movement who employed nonviolent resistance to lead India to independence."
+    }
+]
