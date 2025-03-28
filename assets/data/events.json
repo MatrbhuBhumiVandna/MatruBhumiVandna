@@ -1,1 +1,14 @@
-
+{
+    "title": "Janta Raja Natak 2025",
+    "dates": "2nd May 2025, 8:00 PM to 8th May 2025",
+    "description": "We are organizing Janta Raja Natak-2025 to build this temple. This historical play will showcase the rich heritage and culture of India while raising funds for the construction of the world's largest Bharat Mata Temple.",
+    "tickets": [
+        {"category": "Aaa Killa", "price": "200/-"},
+        {"category": "BBB Lilla", "price": "500/-"},
+        {"category": "CCC Killa", "price": "1000/-"},
+        {"category": "DDD Killa", "price": "2000/-"},
+        {"category": "EEE Lilla", "price": "3000/-"},
+        {"category": "FFF Killa", "price": "5000/-"}
+    ],
+    "contact": "Ticket Booking has started! Please contact us for ticket booking:\n+9194299 12689\n+9194299 12489"
+}
