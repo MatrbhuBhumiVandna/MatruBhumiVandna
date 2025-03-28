@@ -6,164 +6,10 @@
     <title>Site Admin - Matru Bhumi Vandana Trust</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <style>
-        .admin-container {
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .admin-header {
-            text-align: center;
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .admin-tabs {
-            display: flex;
-            margin-bottom: 20px;
-            border-bottom: 1px solid #ddd;
-        }
-        
-        .admin-tab {
-            padding: 10px 20px;
-            cursor: pointer;
-            background-color: #f8f8f8;
-            border: 1px solid #ddd;
-            border-bottom: none;
-            margin-right: 5px;
-            border-radius: 5px 5px 0 0;
-        }
-        
-        .admin-tab.active {
-            background-color: #fff;
-            border-bottom: 1px solid #fff;
-            margin-bottom: -1px;
-            color: #d9230f;
-            font-weight: bold;
-        }
-        
-        .admin-content {
-            display: none;
-        }
-        
-        .admin-content.active {
-            display: block;
-        }
-        
-        .form-group {
-            margin-bottom: 15px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-        
-        .form-control {
-            width: 100%;
-            padding: 8px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-        
-        textarea.form-control {
-            min-height: 150px;
-        }
-        
-        .btn-group {
-            margin-top: 20px;
-            display: flex;
-            gap: 10px;
-        }
-        
-        .btn {
-            padding: 8px 15px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        
-        .btn-primary {
-            background-color: #d9230f;
-            color: white;
-        }
-        
-        .btn-secondary {
-            background-color: #6c757d;
-            color: white;
-        }
-        
-        .file-upload {
-            margin-top: 10px;
-        }
-        
-        .preview-section {
-            margin-top: 30px;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            background-color: #f9f9f9;
-        }
-        
-        .preview-header {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #ddd;
-        }
-        
-        .preview-content {
-            display: flex;
-            gap: 20px;
-        }
-        
-        .preview-old, .preview-new {
-            flex: 1;
-        }
-        
-        .preview-title {
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-        
-        .image-preview {
-            max-width: 100%;
-            margin-top: 10px;
-        }
-    </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <nav class="navbar">
-                <div class="logo-container">
-                    <img src="assets/images/logo.png" alt="Matru Bhumi Vandana Logo" class="logo">
-                    <span class="page-logo">MATRU BHUMI VANDNA</span>
-                </div>
-                <ul class="nav-menu">
-                    <li class="nav-item"><a href="index.html">Home</a></li>
-                    <li class="nav-item"><a href="about.html">About Us</a></li>
-                    <li class="nav-item"><a href="who-we-are.html">Who We Are</a></li>
-                    <li class="nav-item"><a href="events.html">Upcoming Events</a></li>
-                    <li class="nav-item"><a href="contact.html">Contact Us</a></li>
-                    <li class="nav-item"><a href="site-admin.html" class="active">Site Admin</a></li>
-                </ul>
-                <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-            </nav>
-        </div>
-    </header>
+    <!-- Include Header -->
+    <div id="header-placeholder"></div>
 
     <!-- Main Content -->
     <main>
@@ -185,47 +31,17 @@
                 <form id="about-form">
                     <div class="form-group">
                         <label for="about-vision">Our Vision</label>
-                        <textarea id="about-vision" class="form-control">To establish a spiritual and cultural epicenter in Morbi, Gujarat, that:
-• Honors our motherland through the world's largest Bharat Mata Temple.
-• Revives ancient Indian wisdom through a modern Gurukul system.
-• Becomes a global beacon for nationalism and Sanatan Dharma values.
-• Preserves and propagates the principles of Arya Samaj for contemporary society.</textarea>
+                        <textarea id="about-vision" class="form-control"></textarea>
                     </div>
                     
                     <div class="form-group">
                         <label for="about-mission">Our Mission</label>
-                        <textarea id="about-mission" class="form-control">1. Temple Development
-• Construct the world's largest Bharat Mata Temple, symbolizing national pride and devotion.
-• Create a sacred space uniting all Indians in reverence for our motherland.
-
-2. Gurukul Education
-• Establish a state-of-the-art Gurukul blending Vedic knowledge with modern education.
-• Develop future leaders deeply rooted in Indian culture, values, and nationalism.
-• Offer residential programs focusing on character building, discipline, and spirituality.
-
-3. Cultural Preservation
-• Promote Arya Samaj principles through daily rituals, discourses, and community programs.
-• Organize nationalist and cultural events celebrating India's heritage and pride.
-• Create a living museum showcasing India's spiritual and freedom struggle history.
-
-4. Community Engagement
-• Conduct youth programs to instill patriotism and social responsibility.
-• Offer free classes in Sanskrit, Vedic mathematics, and Indian philosophy.
-• Develop outreach programs to schools and colleges across Gujarat.
-
-5. National Integration
-• Host interfaith dialogues promoting unity in diversity.
-• Celebrate Indian festivals with traditional fervor and cultural significance.
-• Create platforms showcasing India's rich cultural and spiritual legacy.</textarea>
+                        <textarea id="about-mission" class="form-control"></textarea>
                     </div>
                     
                     <div class="form-group">
                         <label for="about-values">Core Values</label>
-                        <textarea id="about-values" class="form-control">• Nationalism – Fostering love for Bharat and its cultural heritage.
-• Spirituality – Promoting Sanatan Dharma and Arya Samaj principles.
-• Education – Blending ancient wisdom with modern knowledge.
-• Service – Encouraging selfless contribution to society and nation-building.
-• Unity – Bringing people together beyond caste, creed, and religion.</textarea>
+                        <textarea id="about-values" class="form-control"></textarea>
                     </div>
                     
                     <div class="btn-group">
@@ -239,10 +55,6 @@
                         <h3>Preview Changes</h3>
                     </div>
                     <div class="preview-content">
-                        <div class="preview-old">
-                            <div class="preview-title">Current Content</div>
-                            <div id="old-about-content"></div>
-                        </div>
                         <div class="preview-new">
                             <div class="preview-title">New Content</div>
                             <div id="new-about-content"></div>
@@ -260,34 +72,27 @@
                 <form id="events-form">
                     <div class="form-group">
                         <label for="event-title">Event Title</label>
-                        <input type="text" id="event-title" class="form-control" value="Janta Raja Natak 2025">
+                        <input type="text" id="event-title" class="form-control">
                     </div>
                     
                     <div class="form-group">
                         <label for="event-dates">Event Dates</label>
-                        <input type="text" id="event-dates" class="form-control" value="2nd May 2025, 8:00 PM to 8th May 2025">
+                        <input type="text" id="event-dates" class="form-control">
                     </div>
                     
                     <div class="form-group">
                         <label for="event-description">Event Description</label>
-                        <textarea id="event-description" class="form-control">We are organizing Janta Raja Natak-2025 to build this temple. This historical play will showcase the rich heritage and culture of India while raising funds for the construction of the world's largest Bharat Mata Temple.</textarea>
+                        <textarea id="event-description" class="form-control"></textarea>
                     </div>
                     
                     <div class="form-group">
                         <label for="event-tickets">Ticket Prices (One per line in format: Category - Price)</label>
-                        <textarea id="event-tickets" class="form-control">Aaa Killa - 200/-
-BBB Lilla - 500/-
-CCC Killa - 1000/-
-DDD Killa - 2000/-
-EEE Lilla - 3000/-
-FFF Killa - 5000/-</textarea>
+                        <textarea id="event-tickets" class="form-control"></textarea>
                     </div>
                     
                     <div class="form-group">
                         <label for="event-contact">Contact Information</label>
-                        <textarea id="event-contact" class="form-control">Ticket Booking has started! Please contact us for ticket booking:
-+9194299 12689
-+9194299 12489</textarea>
+                        <textarea id="event-contact" class="form-control"></textarea>
                     </div>
                     
                     <div class="form-group">
@@ -307,10 +112,6 @@ FFF Killa - 5000/-</textarea>
                         <h3>Preview Changes</h3>
                     </div>
                     <div class="preview-content">
-                        <div class="preview-old">
-                            <div class="preview-title">Current Content</div>
-                            <div id="old-events-content"></div>
-                        </div>
                         <div class="preview-new">
                             <div class="preview-title">New Content</div>
                             <div id="new-events-content"></div>
@@ -391,45 +192,76 @@ FFF Killa - 5000/-</textarea>
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section about">
-                    <h3>Matru Bhumi Vandana Trust</h3>
-                    <p>Building the world's largest Bharat Mata Temple in Morbi, Gujarat</p>
-                    <div class="contact">
-                        <span><i class="fas fa-phone"></i> +9194299 12689, +9194299 12489</span>
-                        <span><i class="fas fa-map-marker-alt"></i> Shop No.57, Capital Market, Beside ICICI Bank, Rawapar Chowk, Morbi</span>
-                    </div>
-                </div>
-                <div class="footer-section links">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="who-we-are.html">Who We Are</a></li>
-                        <li><a href="events.html">Upcoming Events</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                        <li><a href="site-admin.html">Site Admin</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section social">
-                    <h3>Follow Us</h3>
-                    <div class="social-links">
-                        <a href="https://www.instagram.com/matrubhumi_official/?hl=en" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.facebook.com/profile.php?id=61558235197338" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2023 Matru Bhumi Vandana Trust. All Rights Reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <!-- Include Footer -->
+    <div id="footer-placeholder"></div>
 
     <script src="assets/js/script.js"></script>
     <script>
+        // Load header and footer
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load header
+            fetch('includes/header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header-placeholder').innerHTML = data;
+                    // Set active tab for admin
+                    const adminLink = document.querySelector('.nav-item a[href="site-admin.html"]');
+                    if (adminLink) {
+                        adminLink.parentElement.classList.add('active');
+                    }
+                });
+            
+            // Load footer
+            fetch('includes/footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-placeholder').innerHTML = data;
+                });
+            
+            // Load data for admin panel
+            loadAdminData();
+        });
+
+        async function loadAdminData() {
+            try {
+                // Load about data
+                const aboutData = await fetch('assets/data/about.json').then(res => res.json());
+                document.getElementById('about-vision').value = aboutData.vision;
+                document.getElementById('about-mission').value = aboutData.mission;
+                document.getElementById('about-values').value = aboutData.values;
+                
+                // Load events data
+                const eventsData = await fetch('assets/data/events.json').then(res => res.json());
+                document.getElementById('event-title').value = eventsData.title;
+                document.getElementById('event-dates').value = eventsData.dates;
+                document.getElementById('event-description').value = eventsData.description;
+                document.getElementById('event-contact').value = eventsData.contact;
+                document.getElementById('event-tickets').value = eventsData.tickets
+                    .map(ticket => `${ticket.category} - ${ticket.price}`)
+                    .join('\n');
+                
+                // Load patriots data
+                const patriotsData = await fetch('assets/data/patriots.json').then(res => res.json());
+                const patriotsGrid = document.getElementById('patriots-grid');
+                patriotsGrid.innerHTML = '';
+                patriotsData.forEach(patriot => {
+                    const patriotItem = document.createElement('div');
+                    patriotItem.className = 'patriot-item';
+                    patriotItem.innerHTML = `
+                        <div style="position: relative;">
+                            <img src="${patriot.image}" alt="${patriot.name}" style="width: 100%; height: 150px; object-fit: cover; border-radius: 5px;">
+                            <button class="btn btn-secondary remove-patriot" style="position: absolute; top: 5px; right: 5px; padding: 2px 5px; font-size: 12px;">×</button>
+                        </div>
+                        <h5 style="margin: 5px 0;">${patriot.name}</h5>
+                        <p style="font-size: 12px; margin: 0;">${patriot.info.substring(0, 50)}...</p>
+                    `;
+                    patriotsGrid.appendChild(patriotItem);
+                });
+            } catch (error) {
+                console.error('Error loading admin data:', error);
+            }
+        }
+
         // Tab functionality
         document.querySelectorAll('.admin-tab').forEach(tab => {
             tab.addEventListener('click', () => {
@@ -446,15 +278,6 @@ FFF Killa - 5000/-</textarea>
         
         // About form preview
         document.getElementById('preview-about').addEventListener('click', () => {
-            document.getElementById('old-about-content').innerHTML = `
-                <h4>Our Vision</h4>
-                <p>${document.getElementById('about-vision').value.replace(/\n/g, '<br>')}</p>
-                <h4>Our Mission</h4>
-                <p>${document.getElementById('about-mission').value.replace(/\n/g, '<br>')}</p>
-                <h4>Core Values</h4>
-                <p>${document.getElementById('about-values').value.replace(/\n/g, '<br>')}</p>
-            `;
-            
             document.getElementById('new-about-content').innerHTML = `
                 <h4>Our Vision</h4>
                 <p>${document.getElementById('about-vision').value.replace(/\n/g, '<br>')}</p>
@@ -472,18 +295,6 @@ FFF Killa - 5000/-</textarea>
             const tickets = document.getElementById('event-tickets').value.split('\n')
                 .map(line => `<tr><td>${line.split('-')[0]}</td><td>${line.split('-')[1]}</td></tr>`)
                 .join('');
-            
-            document.getElementById('old-events-content').innerHTML = `
-                <h4>${document.getElementById('event-title').value}</h4>
-                <p><strong>Dates:</strong> ${document.getElementById('event-dates').value}</p>
-                <p>${document.getElementById('event-description').value}</p>
-                <h5>Ticket Prices</h5>
-                <table>
-                    <tr><th>Category</th><th>Price</th></tr>
-                    ${tickets}
-                </table>
-                <p>${document.getElementById('event-contact').value.replace(/\n/g, '<br>')}</p>
-            `;
             
             document.getElementById('new-events-content').innerHTML = `
                 <h4>${document.getElementById('event-title').value}</h4>
@@ -509,139 +320,80 @@ FFF Killa - 5000/-</textarea>
             document.getElementById('events-preview').style.display = 'none';
         });
         
-        // Save buttons (simulated - in a real app this would save to a database)
-        document.getElementById('save-about').addEventListener('click', () => {
-            alert('About Us content saved successfully!');
-            document.getElementById('about-preview').style.display = 'none';
+        // Save buttons
+        document.getElementById('save-about').addEventListener('click', async () => {
+            const aboutData = {
+                vision: document.getElementById('about-vision').value,
+                mission: document.getElementById('about-mission').value,
+                values: document.getElementById('about-values').value
+            };
+            
+            try {
+                await fetch('assets/data/about.json', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(aboutData)
+                });
+                
+                alert('About Us content saved successfully!');
+                document.getElementById('about-preview').style.display = 'none';
+            } catch (error) {
+                alert('Error saving About Us content');
+                console.error(error);
+            }
         });
         
-        document.getElementById('save-events').addEventListener('click', () => {
-            alert('Events content saved successfully!');
-            document.getElementById('events-preview').style.display = 'none';
+        document.getElementById('save-events').addEventListener('click', async () => {
+            const tickets = document.getElementById('event-tickets').value.split('\n')
+                .map(line => {
+                    const parts = line.split('-');
+                    return {
+                        category: parts[0].trim(),
+                        price: parts[1] ? parts[1].trim() : ''
+                    };
+                })
+                .filter(ticket => ticket.category && ticket.price);
+            
+            const eventsData = {
+                title: document.getElementById('event-title').value,
+                dates: document.getElementById('event-dates').value,
+                description: document.getElementById('event-description').value,
+                contact: document.getElementById('event-contact').value,
+                tickets: tickets
+            };
+            
+            try {
+                await fetch('assets/data/events.json', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(eventsData)
+                });
+                
+                alert('Events content saved successfully!');
+                document.getElementById('events-preview').style.display = 'none';
+            } catch (error) {
+                alert('Error saving Events content');
+                console.error(error);
+            }
         });
         
         // Reset buttons
-        document.getElementById('reset-about').addEventListener('click', () => {
+        document.getElementById('reset-about').addEventListener('click', async () => {
             if (confirm('Are you sure you want to reset all changes?')) {
-                document.getElementById('about-vision').value = `To establish a spiritual and cultural epicenter in Morbi, Gujarat, that:
-• Honors our motherland through the world's largest Bharat Mata Temple.
-• Revives ancient Indian wisdom through a modern Gurukul system.
-• Becomes a global beacon for nationalism and Sanatan Dharma values.
-• Preserves and propagates the principles of Arya Samaj for contemporary society.`;
-                
-                document.getElementById('about-mission').value = `1. Temple Development
-• Construct the world's largest Bharat Mata Temple, symbolizing national pride and devotion.
-• Create a sacred space uniting all Indians in reverence for our motherland.
-
-2. Gurukul Education
-• Establish a state-of-the-art Gurukul blending Vedic knowledge with modern education.
-• Develop future leaders deeply rooted in Indian culture, values, and nationalism.
-• Offer residential programs focusing on character building, discipline, and spirituality.
-
-3. Cultural Preservation
-• Promote Arya Samaj principles through daily rituals, discourses, and community programs.
-• Organize nationalist and cultural events celebrating India's heritage and pride.
-• Create a living museum showcasing India's spiritual and freedom struggle history.
-
-4. Community Engagement
-• Conduct youth programs to instill patriotism and social responsibility.
-• Offer free classes in Sanskrit, Vedic mathematics, and Indian philosophy.
-• Develop outreach programs to schools and colleges across Gujarat.
-
-5. National Integration
-• Host interfaith dialogues promoting unity in diversity.
-• Celebrate Indian festivals with traditional fervor and cultural significance.
-• Create platforms showcasing India's rich cultural and spiritual legacy.`;
-                
-                document.getElementById('about-values').value = `• Nationalism – Fostering love for Bharat and its cultural heritage.
-• Spirituality – Promoting Sanatan Dharma and Arya Samaj principles.
-• Education – Blending ancient wisdom with modern knowledge.
-• Service – Encouraging selfless contribution to society and nation-building.
-• Unity – Bringing people together beyond caste, creed, and religion.`;
+                const aboutData = await fetch('assets/data/about.json').then(res => res.json());
+                document.getElementById('about-vision').value = aboutData.vision;
+                document.getElementById('about-mission').value = aboutData.mission;
+                document.getElementById('about-values').value = aboutData.values;
             }
         });
         
-        document.getElementById('reset-events').addEventListener('click', () => {
+        document.getElementById('reset-events').addEventListener('click', async () => {
             if (confirm('Are you sure you want to reset all changes?')) {
-                document.getElementById('event-title').value = 'Janta Raja Natak 2025';
-                document.getElementById('event-dates').value = '2nd May 2025, 8:00 PM to 8th May 2025';
-                document.getElementById('event-description').value = 'We are organizing Janta Raja Natak-2025 to build this temple. This historical play will showcase the rich heritage and culture of India while raising funds for the construction of the world\'s largest Bharat Mata Temple.';
-                document.getElementById('event-tickets').value = `Aaa Killa - 200/-
-BBB Lilla - 500/-
-CCC Killa - 1000/-
-DDD Killa - 2000/-
-EEE Lilla - 3000/-
-FFF Killa - 5000/-`;
-                document.getElementById('event-contact').value = `Ticket Booking has started! Please contact us for ticket booking:
-+9194299 12689
-+9194299 12489`;
-            }
-        });
-        
-        // Add patriot
-        document.getElementById('add-patriot').addEventListener('click', () => {
-            const name = document.getElementById('patriot-name').value;
-            const info = document.getElementById('patriot-info').value;
-            
-            if (name && info) {
-                const patriotItem = document.createElement('div');
-                patriotItem.className = 'patriot-item';
-                patriotItem.innerHTML = `
-                    <div style="position: relative;">
-                        <img src="#" alt="${name}" style="width: 100%; height: 150px; object-fit: cover; border-radius: 5px;">
-                        <button class="btn btn-secondary" style="position: absolute; top: 5px; right: 5px; padding: 2px 5px; font-size: 12px;">×</button>
-                    </div>
-                    <h5 style="margin: 5px 0;">${name}</h5>
-                    <p style="font-size: 12px; margin: 0;">${info.substring(0, 50)}...</p>
-                `;
-                
-                document.getElementById('patriots-grid').appendChild(patriotItem);
-                
-                // Clear form
-                document.getElementById('patriot-name').value = '';
-                document.getElementById('patriot-info').value = '';
-                
-                alert('Patriot added to gallery!');
-            } else {
-                alert('Please fill in all fields');
-            }
-        });
-        
-        // Upload media
-        document.getElementById('upload-media').addEventListener('click', () => {
-            const fileInput = document.getElementById('media-file');
-            const category = document.getElementById('media-category').value;
-            
-            if (fileInput.files.length === 0) {
-                alert('Please select a file to upload');
-                return;
-            }
-            
-            if (!category) {
-                alert('Please enter a category');
-                return;
-            }
-            
-            const statusDiv = document.getElementById('upload-status');
-            statusDiv.style.display = 'block';
-            statusDiv.innerHTML = '<p>Uploading file... Please wait.</p>';
-            
-            // Simulate upload (in a real app, this would upload to a server)
-            setTimeout(() => {
-                statusDiv.innerHTML = `
-                    <p style="color: green;">File uploaded successfully!</p>
-                    <p><strong>File:</strong> ${fileInput.files[0].name}</p>
-                    <p><strong>Type:</strong> ${document.getElementById('media-type').value}</p>
-                    <p><strong>Category:</strong> ${category}</p>
-                    <p><strong>Description:</strong> ${document.getElementById('media-description').value || 'None'}</p>
-                `;
-                
-                // Clear form
-                fileInput.value = '';
-                document.getElementById('media-category').value = '';
-                document.getElementById('media-description').value = '';
-            }, 1500);
-        });
-    </script>
-</body>
-</html>
+                const eventsData = await fetch('assets/data/events.json').then(res => res.json());
+                document.getElementById('event-title').value = eventsData.title;
+                document.getElementById('event-dates').value = eventsData.dates;
+               
