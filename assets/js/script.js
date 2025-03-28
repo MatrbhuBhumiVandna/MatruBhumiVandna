@@ -1,126 +1,129 @@
+// Load header and footer dynamically
 document.addEventListener('DOMContentLoaded', function() {
-    // Mobile Menu Toggle
+    // Load header
+    fetch('./header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.body.insertAdjacentHTML('afterbegin', data);
+            initMobileMenu();
+        });
+
+    // Load footer
+    fetch('./footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.body.insertAdjacentHTML('beforeend', data);
+            initAdminLogin();
+        });
+
+    // Initialize countdown if on home page
+    if (document.querySelector('.countdown-container')) {
+        initCountdown();
+    }
+
+    // Initialize other page-specific functions
+    initPage();
+});
+
+function initMobileMenu() {
     const mobileMenu = document.getElementById('mobile-menu');
     const navMenu = document.querySelector('.nav-menu');
     
-    mobileMenu.addEventListener('click', function() {
-        mobileMenu.classList.toggle('active');
-        navMenu.classList.toggle('active');
-    });
-    
-    // Close mobile menu when clicking on a link
-    const navLinks = document.querySelectorAll('.nav-link');
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            mobileMenu.classList.remove('active');
-            navMenu.classList.remove('active');
+    if (mobileMenu) {
+        mobileMenu.addEventListener('click', function() {
+            this.classList.toggle('active');
+            navMenu.classList.toggle('active');
         });
-    });
+    }
+}
+
+function initAdminLogin() {
+    const modal = document.getElementById('admin-modal');
+    const loginLink = document.getElementById('admin-login-link');
+    const closeBtn = document.querySelector('.close');
     
-    // Header scroll effect
-    const header = document.querySelector('.header');
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 100) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
+    if (loginLink) {
+        loginLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            modal.style.display = "block";
+        });
+    }
+    
+    if (closeBtn) {
+        closeBtn.addEventListener('click', function() {
+            modal.style.display = "none";
+        });
+    }
+    
+    window.addEventListener('click', function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
         }
     });
     
-    // Countdown Timer
-    function updateCountdown() {
-        const countdownDate = new Date('May 2, 2025 20:00:00').getTime();
+    const loginForm = document.getElementById('admin-login-form');
+    if (loginForm) {
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            if (username === 'admin' && password === 'admin6007') {
+                window.location.href = 'admin.html';
+            } else {
+                alert('Invalid credentials!');
+            }
+        });
+    }
+}
+
+function initCountdown() {
+    const countdownDate = new Date('2025-05-02T20:00:00').getTime();
+    
+    const timer = setInterval(function() {
         const now = new Date().getTime();
         const distance = countdownDate - now;
         
-        // Time calculations
         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
         const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
         
-        // Display results
         document.getElementById('days').textContent = days.toString().padStart(2, '0');
         document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
         document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
         document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
         
-        // If countdown is finished
         if (distance < 0) {
-            clearInterval(countdownInterval);
+            clearInterval(timer);
             document.querySelector('.countdown-container').innerHTML = '<p>The event has started!</p>';
         }
-    }
-    
-    // Update countdown every second
-    if (document.querySelector('.countdown-container')) {
-        updateCountdown();
-        const countdownInterval = setInterval(updateCountdown, 1000);
-    }
-    
-    // Contact Form Submission
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form values
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-            const message = document.getElementById('message').value;
-            
-            // Here you would typically send the form data to a server
-            // For now, we'll just show an alert
-            alert(`Thank you, ${name}! Your message has been received. We'll contact you soon at ${email}.`);
-            
-            // Reset form
-            contactForm.reset();
-        });
-    }
-    
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80,
-                    behavior: 'smooth'
-                });
-            }
-        });
+    }, 1000);
+}
+
+function initPage() {
+    // Highlight current page in navigation
+    const currentPage = location.pathname.split('/').pop().replace('.html', '');
+    document.querySelectorAll('.nav-link').forEach(link => {
+        const linkPage = link.getAttribute('href').replace('.html', '');
+        if (linkPage === currentPage || (currentPage === '' && linkPage === 'index')) {
+            link.classList.add('active');
+        }
     });
     
-    // Animation on scroll
-    function animateOnScroll() {
-        const elements = document.querySelectorAll('.patriot-card, .mission-card, .value-card, .event-card');
+    // Initialize animations
+    const animateElements = document.querySelectorAll('.animate-on-scroll');
+    if (animateElements.length > 0) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                }
+            });
+        }, { threshold: 0.1 });
         
-        elements.forEach(element => {
-            const elementPosition = element.getBoundingClientRect().top;
-            const screenPosition = window.innerHeight / 1.2;
-            
-            if (elementPosition < screenPosition) {
-                element.style.opacity = '1';
-                element.style.transform = 'translateY(0)';
-            }
+        animateElements.forEach(element => {
+            observer.observe(element);
         });
     }
-    
-    // Set initial state for animated elements
-    const animatedElements = document.querySelectorAll('.patriot-card, .mission-card, .value-card, .event-card');
-    animatedElements.forEach(element => {
-        element.style.opacity = '0';
-        element.style.transform = 'translateY(20px)';
-        element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-    });
-    
-    // Run animation on load and scroll
-    window.addEventListener('load', animateOnScroll);
-    window.addEventListener('scroll', animateOnScroll);
-});
+}
