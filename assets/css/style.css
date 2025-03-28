@@ -1,15 +1,15 @@
 /* Global Styles */
 :root {
-    --primary-color: #ff6b00;
-    --secondary-color: #d43f00;
-    --accent-color: #ff8c00;
-    --dark-color: #333;
-    --light-color: #f8f8f8;
-    --text-color: #444;
-    --white: #fff;
-    --black: #000;
-    --gray: #777;
-    --light-gray: #eee;
+    --primary-color: #8B0000; /* Dark Red */
+    --secondary-color: #CD5C5C; /* Indian Red */
+    --accent-color: #FFA07A; /* Light Salmon */
+    --dark-color: #2F4F4F; /* Dark Slate Gray */
+    --light-color: #FFF5EE; /* Seashell */
+    --text-color: #333;
+    --white: #FFFFFF;
+    --black: #000000;
+    --gold: #FFD700;
+    
     --font-primary: 'Poppins', sans-serif;
     --font-secondary: 'Noto Sans', sans-serif;
     --transition: all 0.3s ease;
