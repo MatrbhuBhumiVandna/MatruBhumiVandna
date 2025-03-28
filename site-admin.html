@@ -1,399 +1,123 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site Admin - Matru Bhumi Vandana Trust</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body>
-    <!-- Include Header -->
-    <div id="header-placeholder"></div>
+                // Add new patriot
+                const newPatriot = {
+                    name: name,
+                    info: info,
+                    image: imageUrl
+                };
+                
+                const updatedPatriots = [...patriotsData, newPatriot];
+                
+                // Save updated patriots
+                await fetch('assets/data/patriots.json', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(updatedPatriots)
+                });
+                
+                // Add to the grid
+                const patriotItem = document.createElement('div');
+                patriotItem.className = 'patriot-item';
+                patriotItem.innerHTML = `
+                    <div style="position: relative;">
+                        <img src="${imageUrl}" alt="${name}" style="width: 100%; height: 150px; object-fit: cover; border-radius: 5px;">
+                        <button class="btn btn-secondary remove-patriot" style="position: absolute; top: 5px; right: 5px; padding: 2px 5px; font-size: 12px;">×</button>
+                    </div>
+                    <h5 style="margin: 5px 0;">${name}</h5>
+                    <p style="font-size: 12px; margin: 0;">${info.substring(0, 50)}...</p>
+                `;
+                document.getElementById('patriots-grid').appendChild(patriotItem);
+                
+                // Clear form
+                document.getElementById('patriot-name').value = '';
+                document.getElementById('patriot-info').value = '';
+                document.getElementById('patriot-image').value = '';
+                
+                alert('Patriot added to gallery!');
+            } catch (error) {
+                alert('Error adding patriot');
+                console.error(error);
+            }
+        });
 
-    <!-- Main Content -->
-    <main>
-        <div class="admin-container">
-            <div class="admin-header">
-                <h1>Website Administration Panel</h1>
-                <p>Edit website content without coding knowledge</p>
-            </div>
-            
-            <div class="admin-tabs">
-                <div class="admin-tab active" data-tab="about">About Us</div>
-                <div class="admin-tab" data-tab="events">Upcoming Events</div>
-                <div class="admin-tab" data-tab="patriots">Patriots Gallery</div>
-                <div class="admin-tab" data-tab="media">Media Upload</div>
-            </div>
-            
-            <!-- About Us Tab -->
-            <div id="about-tab" class="admin-content active">
-                <form id="about-form">
-                    <div class="form-group">
-                        <label for="about-vision">Our Vision</label>
-                        <textarea id="about-vision" class="form-control"></textarea>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="about-mission">Our Mission</label>
-                        <textarea id="about-mission" class="form-control"></textarea>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="about-values">Core Values</label>
-                        <textarea id="about-values" class="form-control"></textarea>
-                    </div>
-                    
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-primary" id="preview-about">Preview Changes</button>
-                        <button type="button" class="btn btn-secondary" id="reset-about">Reset</button>
-                    </div>
-                </form>
+        // Remove patriot
+        document.addEventListener('click', async function(e) {
+            if (e.target.classList.contains('remove-patriot')) {
+                const patriotItem = e.target.closest('.patriot-item');
+                const patriotName = patriotItem.querySelector('h5').textContent;
                 
-                <div id="about-preview" class="preview-section" style="display: none;">
-                    <div class="preview-header">
-                        <h3>Preview Changes</h3>
-                    </div>
-                    <div class="preview-content">
-                        <div class="preview-new">
-                            <div class="preview-title">New Content</div>
-                            <div id="new-about-content"></div>
-                        </div>
-                    </div>
-                    <div class="btn-group" style="margin-top: 20px;">
-                        <button type="button" class="btn btn-primary" id="save-about">Save Changes</button>
-                        <button type="button" class="btn btn-secondary" id="cancel-about">Cancel</button>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Events Tab -->
-            <div id="events-tab" class="admin-content">
-                <form id="events-form">
-                    <div class="form-group">
-                        <label for="event-title">Event Title</label>
-                        <input type="text" id="event-title" class="form-control">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="event-dates">Event Dates</label>
-                        <input type="text" id="event-dates" class="form-control">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="event-description">Event Description</label>
-                        <textarea id="event-description" class="form-control"></textarea>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="event-tickets">Ticket Prices (One per line in format: Category - Price)</label>
-                        <textarea id="event-tickets" class="form-control"></textarea>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="event-contact">Contact Information</label>
-                        <textarea id="event-contact" class="form-control"></textarea>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>Event Poster</label>
-                        <input type="file" id="event-poster" class="file-upload">
-                        <small>Upload a new poster image (recommended size: 800x1200px)</small>
-                    </div>
-                    
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-primary" id="preview-events">Preview Changes</button>
-                        <button type="button" class="btn btn-secondary" id="reset-events">Reset</button>
-                    </div>
-                </form>
-                
-                <div id="events-preview" class="preview-section" style="display: none;">
-                    <div class="preview-header">
-                        <h3>Preview Changes</h3>
-                    </div>
-                    <div class="preview-content">
-                        <div class="preview-new">
-                            <div class="preview-title">New Content</div>
-                            <div id="new-events-content"></div>
-                        </div>
-                    </div>
-                    <div class="btn-group" style="margin-top: 20px;">
-                        <button type="button" class="btn btn-primary" id="save-events">Save Changes</button>
-                        <button type="button" class="btn btn-secondary" id="cancel-events">Cancel</button>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Patriots Gallery Tab -->
-            <div id="patriots-tab" class="admin-content">
-                <h3>Manage Patriots Gallery</h3>
-                <p>Add, edit, or remove patriots from the homepage gallery.</p>
-                
-                <div class="form-group">
-                    <label>Add New Patriot</label>
-                    <input type="file" id="patriot-image" class="file-upload">
-                    <small>Upload an image of the patriot (recommended size: 600x800px)</small>
-                </div>
-                
-                <div class="form-group">
-                    <label for="patriot-name">Patriot Name</label>
-                    <input type="text" id="patriot-name" class="form-control">
-                </div>
-                
-                <div class="form-group">
-                    <label for="patriot-info">Patriot Information</label>
-                    <textarea id="patriot-info" class="form-control" rows="4"></textarea>
-                </div>
-                
-                <button type="button" class="btn btn-primary" id="add-patriot">Add Patriot</button>
-                
-                <div class="patriots-list" style="margin-top: 30px;">
-                    <h4>Current Patriots in Gallery</h4>
-                    <div id="patriots-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; margin-top: 15px;">
-                        <!-- Patriots will be loaded here -->
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Media Upload Tab -->
-            <div id="media-tab" class="admin-content">
-                <h3>Media Upload</h3>
-                <p>Upload images and videos to be used on the website.</p>
-                
-                <div class="form-group">
-                    <label>Select Media Type</label>
-                    <select id="media-type" class="form-control">
-                        <option value="image">Image</option>
-                        <option value="video">Video</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label>Upload File</label>
-                    <input type="file" id="media-file" class="file-upload">
-                </div>
-                
-                <div class="form-group">
-                    <label for="media-category">Category (for organization)</label>
-                    <input type="text" id="media-category" class="form-control" placeholder="e.g., events, patriots, temple">
-                </div>
-                
-                <div class="form-group">
-                    <label for="media-description">Description (optional)</label>
-                    <textarea id="media-description" class="form-control" rows="3"></textarea>
-                </div>
-                
-                <button type="button" class="btn btn-primary" id="upload-media">Upload Media</button>
-                
-                <div class="upload-status" style="margin-top: 20px; padding: 10px; display: none;" id="upload-status">
-                    <!-- Upload status will be shown here -->
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <!-- Include Footer -->
-    <div id="footer-placeholder"></div>
-
-    <script src="assets/js/script.js"></script>
-    <script>
-        // Load header and footer
-        document.addEventListener('DOMContentLoaded', function() {
-            // Load header
-            fetch('includes/header.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('header-placeholder').innerHTML = data;
-                    // Set active tab for admin
-                    const adminLink = document.querySelector('.nav-item a[href="site-admin.html"]');
-                    if (adminLink) {
-                        adminLink.parentElement.classList.add('active');
+                if (confirm(`Are you sure you want to remove ${patriotName}?`)) {
+                    try {
+                        // Load current patriots
+                        const patriotsData = await fetch('assets/data/patriots.json').then(res => res.json());
+                        
+                        // Filter out the removed patriot
+                        const updatedPatriots = patriotsData.filter(p => p.name !== patriotName);
+                        
+                        // Save updated patriots
+                        await fetch('assets/data/patriots.json', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify(updatedPatriots)
+                        });
+                        
+                        // Remove from UI
+                        patriotItem.remove();
+                        
+                        alert(`${patriotName} removed from gallery!`);
+                    } catch (error) {
+                        alert('Error removing patriot');
+                        console.error(error);
                     }
-                });
-            
-            // Load footer
-            fetch('includes/footer.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('footer-placeholder').innerHTML = data;
-                });
-            
-            // Load data for admin panel
-            loadAdminData();
+                }
+            }
         });
 
-        async function loadAdminData() {
+        // Upload media
+        document.getElementById('upload-media').addEventListener('click', async function() {
+            const fileInput = document.getElementById('media-file');
+            const category = document.getElementById('media-category').value;
+            const description = document.getElementById('media-description').value;
+            
+            if (fileInput.files.length === 0) {
+                alert('Please select a file to upload');
+                return;
+            }
+            
+            if (!category) {
+                alert('Please enter a category');
+                return;
+            }
+            
+            const statusDiv = document.getElementById('upload-status');
+            statusDiv.style.display = 'block';
+            statusDiv.innerHTML = '<p>Uploading file... Please wait.</p>';
+            
             try {
-                // Load about data
-                const aboutData = await fetch('assets/data/about.json').then(res => res.json());
-                document.getElementById('about-vision').value = aboutData.vision;
-                document.getElementById('about-mission').value = aboutData.mission;
-                document.getElementById('about-values').value = aboutData.values;
+                // In a real app, you would upload the file to a server here
+                // For this example, we'll just simulate the upload
                 
-                // Load events data
-                const eventsData = await fetch('assets/data/events.json').then(res => res.json());
-                document.getElementById('event-title').value = eventsData.title;
-                document.getElementById('event-dates').value = eventsData.dates;
-                document.getElementById('event-description').value = eventsData.description;
-                document.getElementById('event-contact').value = eventsData.contact;
-                document.getElementById('event-tickets').value = eventsData.tickets
-                    .map(ticket => `${ticket.category} - ${ticket.price}`)
-                    .join('\n');
-                
-                // Load patriots data
-                const patriotsData = await fetch('assets/data/patriots.json').then(res => res.json());
-                const patriotsGrid = document.getElementById('patriots-grid');
-                patriotsGrid.innerHTML = '';
-                patriotsData.forEach(patriot => {
-                    const patriotItem = document.createElement('div');
-                    patriotItem.className = 'patriot-item';
-                    patriotItem.innerHTML = `
-                        <div style="position: relative;">
-                            <img src="${patriot.image}" alt="${patriot.name}" style="width: 100%; height: 150px; object-fit: cover; border-radius: 5px;">
-                            <button class="btn btn-secondary remove-patriot" style="position: absolute; top: 5px; right: 5px; padding: 2px 5px; font-size: 12px;">×</button>
-                        </div>
-                        <h5 style="margin: 5px 0;">${patriot.name}</h5>
-                        <p style="font-size: 12px; margin: 0;">${patriot.info.substring(0, 50)}...</p>
+                setTimeout(() => {
+                    statusDiv.innerHTML = `
+                        <p style="color: var(--primary-color);">File uploaded successfully!</p>
+                        <p><strong>File:</strong> ${fileInput.files[0].name}</p>
+                        <p><strong>Type:</strong> ${document.getElementById('media-type').value}</p>
+                        <p><strong>Category:</strong> ${category}</p>
+                        <p><strong>Description:</strong> ${description || 'None'}</p>
                     `;
-                    patriotsGrid.appendChild(patriotItem);
-                });
+                    
+                    // Clear form
+                    fileInput.value = '';
+                    document.getElementById('media-category').value = '';
+                    document.getElementById('media-description').value = '';
+                }, 1500);
             } catch (error) {
-                console.error('Error loading admin data:', error);
-            }
-        }
-
-        // Tab functionality
-        document.querySelectorAll('.admin-tab').forEach(tab => {
-            tab.addEventListener('click', () => {
-                // Remove active class from all tabs and content
-                document.querySelectorAll('.admin-tab').forEach(t => t.classList.remove('active'));
-                document.querySelectorAll('.admin-content').forEach(c => c.classList.remove('active'));
-                
-                // Add active class to clicked tab and corresponding content
-                tab.classList.add('active');
-                const tabId = tab.getAttribute('data-tab');
-                document.getElementById(`${tabId}-tab`).classList.add('active');
-            });
-        });
-        
-        // About form preview
-        document.getElementById('preview-about').addEventListener('click', () => {
-            document.getElementById('new-about-content').innerHTML = `
-                <h4>Our Vision</h4>
-                <p>${document.getElementById('about-vision').value.replace(/\n/g, '<br>')}</p>
-                <h4>Our Mission</h4>
-                <p>${document.getElementById('about-mission').value.replace(/\n/g, '<br>')}</p>
-                <h4>Core Values</h4>
-                <p>${document.getElementById('about-values').value.replace(/\n/g, '<br>')}</p>
-            `;
-            
-            document.getElementById('about-preview').style.display = 'block';
-        });
-        
-        // Events form preview
-        document.getElementById('preview-events').addEventListener('click', () => {
-            const tickets = document.getElementById('event-tickets').value.split('\n')
-                .map(line => `<tr><td>${line.split('-')[0]}</td><td>${line.split('-')[1]}</td></tr>`)
-                .join('');
-            
-            document.getElementById('new-events-content').innerHTML = `
-                <h4>${document.getElementById('event-title').value}</h4>
-                <p><strong>Dates:</strong> ${document.getElementById('event-dates').value}</p>
-                <p>${document.getElementById('event-description').value}</p>
-                <h5>Ticket Prices</h5>
-                <table>
-                    <tr><th>Category</th><th>Price</th></tr>
-                    ${tickets}
-                </table>
-                <p>${document.getElementById('event-contact').value.replace(/\n/g, '<br>')}</p>
-            `;
-            
-            document.getElementById('events-preview').style.display = 'block';
-        });
-        
-        // Cancel buttons
-        document.getElementById('cancel-about').addEventListener('click', () => {
-            document.getElementById('about-preview').style.display = 'none';
-        });
-        
-        document.getElementById('cancel-events').addEventListener('click', () => {
-            document.getElementById('events-preview').style.display = 'none';
-        });
-        
-        // Save buttons
-        document.getElementById('save-about').addEventListener('click', async () => {
-            const aboutData = {
-                vision: document.getElementById('about-vision').value,
-                mission: document.getElementById('about-mission').value,
-                values: document.getElementById('about-values').value
-            };
-            
-            try {
-                await fetch('assets/data/about.json', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(aboutData)
-                });
-                
-                alert('About Us content saved successfully!');
-                document.getElementById('about-preview').style.display = 'none';
-            } catch (error) {
-                alert('Error saving About Us content');
-                console.error(error);
+                statusDiv.innerHTML = `<p style="color: var(--primary-color);">Error uploading file: ${error.message}</p>`;
             }
         });
-        
-        document.getElementById('save-events').addEventListener('click', async () => {
-            const tickets = document.getElementById('event-tickets').value.split('\n')
-                .map(line => {
-                    const parts = line.split('-');
-                    return {
-                        category: parts[0].trim(),
-                        price: parts[1] ? parts[1].trim() : ''
-                    };
-                })
-                .filter(ticket => ticket.category && ticket.price);
-            
-            const eventsData = {
-                title: document.getElementById('event-title').value,
-                dates: document.getElementById('event-dates').value,
-                description: document.getElementById('event-description').value,
-                contact: document.getElementById('event-contact').value,
-                tickets: tickets
-            };
-            
-            try {
-                await fetch('assets/data/events.json', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(eventsData)
-                });
-                
-                alert('Events content saved successfully!');
-                document.getElementById('events-preview').style.display = 'none';
-            } catch (error) {
-                alert('Error saving Events content');
-                console.error(error);
-            }
-        });
-        
-        // Reset buttons
-        document.getElementById('reset-about').addEventListener('click', async () => {
-            if (confirm('Are you sure you want to reset all changes?')) {
-                const aboutData = await fetch('assets/data/about.json').then(res => res.json());
-                document.getElementById('about-vision').value = aboutData.vision;
-                document.getElementById('about-mission').value = aboutData.mission;
-                document.getElementById('about-values').value = aboutData.values;
-            }
-        });
-        
-        document.getElementById('reset-events').addEventListener('click', async () => {
-            if (confirm('Are you sure you want to reset all changes?')) {
-                const eventsData = await fetch('assets/data/events.json').then(res => res.json());
-                document.getElementById('event-title').value = eventsData.title;
-                document.getElementById('event-dates').value = eventsData.dates;
-               
+    </script>
+</body>
+</html>
