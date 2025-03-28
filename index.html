@@ -1,144 +1,61 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matru Bhumi Vandana Trust - Home</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body>
-    <!-- Header -->
-    <header class="header">
+<!-- Include header -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(function(){
+        $("header").load("header.html");
+        $("footer").load("footer.html");
+    });
+</script>
+
+<header></header>
+
+<main>
+    <section class="hero">
         <div class="container">
-            <nav class="navbar">
-                <div class="logo-container">
-                    <img src="assets/images/logo.png" alt="Matru Bhumi Vandana Logo" class="logo">
-                    <span class="page-logo">MATRU BHUMI VANDNA</span>
-                </div>
-                <ul class="nav-menu">
-                    <li class="nav-item active"><a href="index.html">Home</a></li>
-                    <li class="nav-item"><a href="about.html">About Us</a></li>
-                    <li class="nav-item"><a href="who-we-are.html">Who We Are</a></li>
-                    <li class="nav-item highlight"><a href="events.html">Upcoming Events</a></li>
-                    <li class="nav-item"><a href="contact.html">Contact Us</a></li>
-                    <li class="nav-item social-icons">
-                        <a href="https://www.instagram.com/matrubhumi_official/?hl=en" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.facebook.com/profile.php?id=61558235197338" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    </li>
-                </ul>
-                <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-            </nav>
+            <h1>World's Biggest Temple of Bharat Mata</h1>
+            <h2>Under the "Matru Bhumi Vandna Trust" - Coming Soon</h2>
+            <div class="cta-buttons">
+                <a href="about.html" class="btn">Learn More</a>
+                <a href="events.html" class="btn">Upcoming Events</a>
+            </div>
         </div>
-    </header>
+    </section>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="container">
-                <h1>World's Biggest Temple of Bharat Mata</h1>
-                <p>Under the "Matru Bhumi Vandna Trust" - Coming Soon</p>
-            </div>
-        </section>
-
-        <!-- Countdown Section -->
-        <section class="countdown-section">
-            <div class="container">
-                <h2>Janta Raja Natak 2025</h2>
-                <p>Starts from 2/5/2025 8:00pm to 8/5/2025</p>
-                <div class="countdown-container">
-                    <div class="countdown-box">
-                        <span id="days">00</span>
-                        <p>Days</p>
-                    </div>
-                    <div class="countdown-box">
-                        <span id="hours">00</span>
-                        <p>Hours</p>
-                    </div>
-                    <div class="countdown-box">
-                        <span id="minutes">00</span>
-                        <p>Minutes</p>
-                    </div>
-                    <div class="countdown-box">
-                        <span id="seconds">00</span>
-                        <p>Seconds</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Patriots Showcase -->
-        <section class="patriots-showcase">
-            <div class="container">
-                <h2>Our Great Patriots</h2>
-                <div class="patriots-grid">
-                    <!-- Patriot items will be loaded dynamically -->
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
+    <section class="countdown-section">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section about">
-                    <h3>Matru Bhumi Vandana Trust</h3>
-                    <p>Building the world's largest Bharat Mata Temple in Morbi, Gujarat</p>
-                    <div class="contact">
-                        <span><i class="fas fa-phone"></i> +9194299 12689, +9194299 12489</span>
-                        <span><i class="fas fa-map-marker-alt"></i> Shop No.57, Capital Market, Beside ICICI Bank, Rawapar Chowk, Morbi</span>
-                    </div>
+            <h2>Janta Raja Natak 2025</h2>
+            <p>Starts on 2nd May 2025 at 8:00 PM</p>
+            <div class="countdown-container">
+                <div class="countdown-box">
+                    <span id="days">00</span>
+                    <p>Days</p>
                 </div>
-                <div class="footer-section links">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="who-we-are.html">Who We Are</a></li>
-                        <li><a href="events.html">Upcoming Events</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                        <li><a href="#" id="admin-login-link">Site Admin</a></li>
-                    </ul>
+                <div class="countdown-box">
+                    <span id="hours">00</span>
+                    <p>Hours</p>
                 </div>
-                <div class="footer-section social">
-                    <h3>Follow Us</h3>
-                    <div class="social-links">
-                        <a href="https://www.instagram.com/matrubhumi_official/?hl=en" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.facebook.com/profile.php?id=61558235197338" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    </div>
+                <div class="countdown-box">
+                    <span id="minutes">00</span>
+                    <p>Minutes</p>
+                </div>
+                <div class="countdown-box">
+                    <span id="seconds">00</span>
+                    <p>Seconds</p>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2023 Matru Bhumi Vandana Trust. All Rights Reserved.</p>
+        </div>
+    </section>
+
+    <section class="patriots-showcase">
+        <div class="container">
+            <h2>Our Great Patriots</h2>
+            <div class="patriots-grid">
+                <!-- Patriot items will be added dynamically via JS -->
             </div>
         </div>
-    </footer>
+    </section>
+</main>
 
-    <!-- Admin Login Modal -->
-    <div id="admin-login-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2>Admin Login</h2>
-            <form id="admin-login-form">
-                <div class="form-group">
-                    <label for="username">Username</label>
-                    <input type="text" id="username" name="username" required>
-                </div>
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" required>
-                </div>
-                <button type="submit" class="btn">Login</button>
-            </form>
-        </div>
-    </div>
+<footer></footer>
 
-    <script src="assets/js/script.js"></script>
-</body>
-</html>
+<script src="js/countdown.js"></script>
