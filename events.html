@@ -1,86 +1,91 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upcoming Events - Matru Bhumi Vandana Trust</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Patua+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/styles.css">
-</head>
-<body>
-    <!-- Header Section -->
-    <div id="header"></div>
-
-    <!-- Main Content -->
+<!--#include file="header.html" -->
     <main>
-        <!-- Events Hero Section -->
-        <section class="page-hero">
-            <h1>Upcoming Events</h1>
-        </section>
-
-        <!-- Current Event Section -->
-        <section class="content-section">
+        <section class="page-header">
             <div class="container">
-                <h2>Janta Raja Natak 2025</h2>
-                <p>We are organizing Janta Raja Natak-2025 to build this temple, starting from 2/5/2025 8pm and ending at 8/5/2025</p>
-                
-                <div class="ticket-prices">
-                    <h3>Ticket Prices</h3>
-                    <table>
-                        <tr>
-                            <th>Category</th>
-                            <th>Price</th>
-                        </tr>
-                        <tr>
-                            <td>Aaa Killa</td>
-                            <td>200/-</td>
-                        </tr>
-                        <tr>
-                            <td>BBB Lilla</td>
-                            <td>500/-</td>
-                        </tr>
-                        <tr>
-                            <td>CCC Killa</td>
-                            <td>1000/-</td>
-                        </tr>
-                        <tr>
-                            <td>DDD Killa</td>
-                            <td>2000/-</td>
-                        </tr>
-                        <tr>
-                            <td>EEE Lilla</td>
-                            <td>3000/-</td>
-                        </tr>
-                        <tr>
-                            <td>FFF Killa</td>
-                            <td>5000/-</td>
-                        </tr>
-                    </table>
+                <h1>Upcoming Events</h1>
+                <p>Join us in our upcoming programs</p>
+            </div>
+        </section>
+        
+        <section class="upcoming-events">
+            <div class="container">
+                <div class="event-highlight">
+                    <h2>Janta Raja Natak-2025</h2>
+                    <p>We are organizing Janta Raja Natak-2025 for build this temple</p>
+                    <p class="event-date">From 2nd May 2025, 8:00 PM to 8th May 2025</p>
                     
-                    <div class="booking-info">
-                        <p>Ticket Booking has started. Please contact:</p>
-                        <p><i class="fas fa-phone"></i> +91 94299 12689</p>
-                        <p><i class="fas fa-phone"></i> +91 94299 12489</p>
+                    <div class="ticket-pricing">
+                        <h3>Ticket Prices</h3>
+                        <table>
+                            <tr>
+                                <th>Category</th>
+                                <th>Price</th>
+                            </tr>
+                            <tr>
+                                <td>Aaa Killa</td>
+                                <td>₹200/-</td>
+                            </tr>
+                            <tr>
+                                <td>BBB Lilla</td>
+                                <td>₹500/-</td>
+                            </tr>
+                            <tr>
+                                <td>CCC Killa</td>
+                                <td>₹1000/-</td>
+                            </tr>
+                            <tr>
+                                <td>DDD Killa</td>
+                                <td>₹2000/-</td>
+                            </tr>
+                            <tr>
+                                <td>EEE Lilla</td>
+                                <td>₹3000/-</td>
+                            </tr>
+                            <tr>
+                                <td>FFF Killa</td>
+                                <td>₹5000/-</td>
+                            </tr>
+                        </table>
+                        
+                        <div class="booking-info">
+                            <p>Ticket Booking started! Please contact:</p>
+                            <p><a href="tel:+919429912689">+91 94299 12689</a>, <a href="tel:+919429912489">+91 94299 12489</a></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="past-events">
+                    <h2>Past Events Gallery</h2>
+                    <div class="event-gallery">
+                        <!-- Event 1 -->
+                        <div class="event-card">
+                            <img src="assets/images/events/event1.jpg" alt="Past Event">
+                            <div class="event-info">
+                                <h3>Event Title</h3>
+                                <p>Brief description of the event and its significance.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Event 2 -->
+                        <div class="event-card">
+                            <img src="assets/images/events/event2.jpg" alt="Past Event">
+                            <div class="event-info">
+                                <h3>Event Title</h3>
+                                <p>Brief description of the event and its significance.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Event 3 -->
+                        <div class="event-card">
+                            <img src="assets/images/events/event3.jpg" alt="Past Event">
+                            <div class="event-info">
+                                <h3>Event Title</h3>
+                                <p>Brief description of the event and its significance.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-
-        <!-- Past Events Gallery -->
-        <section class="content-section alt-bg">
-            <div class="container">
-                <h2>Past Events Gallery</h2>
-                <div class="gallery-grid">
-                    <!-- Gallery items will be loaded dynamically -->
-                </div>
-            </div>
-        </section>
     </main>
-
-    <!-- Footer Section -->
-    <div id="footer"></div>
-
-    <script src="assets/js/script.js"></script>
-</body>
-</html>
+<!--#include file="footer.html" -->
