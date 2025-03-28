@@ -1,1 +1,122 @@
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-img {
+        order: -1;
+    }
+    
+    .countdown-value {
+        width: 80px;
+        height: 80px;
+        font-size: 2.5rem;
+    }
+}
 
+@media (max-width: 768px) {
+    .header-inner {
+        padding: 10px 0;
+    }
+    
+    .hamburger {
+        display: block;
+    }
+    
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 80px;
+        background: var(--white);
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+        transition: var(--transition);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        padding: 20px 0;
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .nav-item {
+        margin: 15px 0;
+    }
+    
+    .social-icons {
+        justify-content: center;
+        margin-top: 20px;
+    }
+    
+    .hero {
+        height: auto;
+        padding: 100px 0;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .countdown-container {
+        flex-wrap: wrap;
+    }
+    
+    .countdown-box {
+        margin: 10px;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .logo span {
+        font-size: 1.2rem;
+    }
+    
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .btn {
+        padding: 10px 20px;
+    }
+    
+    .countdown-value {
+        width: 60px;
+        height: 60px;
+        font-size: 2rem;
+    }
+    
+    .countdown-label {
+        font-size: 0.8rem;
+    }
+    
+    .donate-btn-sticky {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+}
