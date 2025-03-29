@@ -1,44 +1,91 @@
+<!--#include virtual="includes/header.html" -->
 
-<?php include 'includes/header.php'; ?>
-
-<!-- Donation Section -->
-<section class="about-section">
-    <div class="container">
-        <h2 class="section-title">Support Our Cause</h2>
-        
-        <div class="about-content">
-            <div class="about-text">
-                <h2>Help Build the World's Largest Bharat Mata Temple</h2>
-                <p>Your generous donations will help us construct the world's biggest Bharat Mata Temple in Morbi, Gujarat and support our various initiatives including the Gurukul education system, cultural preservation programs, and community engagement activities.</p>
-                
-                <h3>How Your Donation Helps</h3>
-                <ul>
-                    <li>Construction of the Bharat Mata Temple</li>
-                    <li>Development of the Gurukul education system</li>
-                    <li>Organization of cultural and patriotic events</li>
-                    <li>Community outreach programs</li>
-                    <li>Preservation of Indian heritage and values</li>
-                </ul>
-                
-                <h3>Donation Methods</h3>
-                <p><strong>Bank Transfer:</strong><br>
-                Account Name: Matru Bhumi Vandana Trust<br>
-                Account Number: XXXXXXXXXX<br>
-                Bank Name: XXXX Bank<br>
-                IFSC Code: XXXXXXXXXXX</p>
-                
-                <p><strong>UPI:</strong> matrubhumi@upi</p>
-                
-                <p><strong>Cash/Cheque:</strong> Visit our office at Matrubhumi Vandana Trust-Morbi, Shop No.57, Capital Market, Beside ICICI Bank, Rawapar Chowk, Morbi.</p>
-                
-                <p>For any donation-related queries, please contact us at <a href="tel:+919429912689">+91 94299 12689</a> or <a href="tel:+919429912489">+91 94299 12489</a>.</p>
+    <main class="main-content">
+        <section class="page-header">
+            <div class="container">
+                <h1>Support Our Cause</h1>
+                <p>Your donation helps build the world's biggest Bharat Mata Temple</p>
             </div>
-            
-            <div class="about-img">
-                <img src="assets/images/donation.jpg" alt="Donate to Matru Bhumi Vandana Trust">
-            </div>
-        </div>
-    </div>
-</section>
+        </section>
 
-<?php include 'includes/footer.php'; ?>
+        <section class="donate-section">
+            <div class="container">
+                <div class="donate-content">
+                    <div class="donate-info">
+                        <h2>Why Donate?</h2>
+                        <p>Your generous contributions will help us:</p>
+                        <ul>
+                            <li>Construct the world's largest Bharat Mata Temple in Morbi</li>
+                            <li>Establish a modern Gurukul for Vedic education</li>
+                            <li>Organize cultural and nationalist programs</li>
+                            <li>Preserve and promote Indian heritage and values</li>
+                        </ul>
+                        
+                        <div class="donation-methods">
+                            <h3>Donation Methods</h3>
+                            <div class="method">
+                                <h4>Bank Transfer</h4>
+                                <p>Account Name: Matru Bhumi Vandana Trust</p>
+                                <p>Bank Name: [Bank Name]</p>
+                                <p>Account Number: [Account Number]</p>
+                                <p>IFSC Code: [IFSC Code]</p>
+                            </div>
+                            
+                            <div class="method">
+                                <h4>UPI Payment</h4>
+                                <p>Scan the QR code below or use UPI ID:</p>
+                                <div class="upi-container">
+                                    <img src="images/upi-qr.png" alt="UPI QR Code" class="upi-qr">
+                                    <p class="upi-id">matrubhumi@upi</p>
+                                </div>
+                            </div>
+                            
+                            <div class="method">
+                                <h4>Cash Donation</h4>
+                                <p>Visit our office in Morbi to make cash donations:</p>
+                                <p>Matrubhumi Vandana Trust-Morbi, Shop No.57, Capital Market, Beside ICICI Bank, Rawapar Chowk, Morbi.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="donation-form">
+                        <h2>Make a Donation</h2>
+                        <form id="donationForm">
+                            <div class="form-group">
+                                <input type="text" id="donorName" name="donorName" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="donorEmail" name="donorEmail" placeholder="Your Email">
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" id="donorPhone" name="donorPhone" placeholder="Your Phone Number" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="donorAddress" name="donorAddress" placeholder="Your Address">
+                            </div>
+                            <div class="form-group">
+                                <select id="donationAmount" name="donationAmount" required>
+                                    <option value="" disabled selected>Select Donation Amount</option>
+                                    <option value="500">₹500</option>
+                                    <option value="1000">₹1,000</option>
+                                    <option value="2100">₹2,100</option>
+                                    <option value="5100">₹5,100</option>
+                                    <option value="11000">₹11,000</option>
+                                    <option value="other">Other Amount</option>
+                                </select>
+                            </div>
+                            <div class="form-group other-amount" style="display: none;">
+                                <input type="number" id="otherAmount" name="otherAmount" placeholder="Enter Amount in INR">
+                            </div>
+                            <div class="form-group">
+                                <textarea id="donorMessage" name="donorMessage" placeholder="Any Message (Optional)"></textarea>
+                            </div>
+                            <button type="submit" class="donate-btn">Donate Now</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+<!--#include virtual="includes/footer.html" -->
