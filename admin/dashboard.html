@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Matru Bhumi Vandana Trust Admin</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <div class="admin-container">
+        <div class="admin-sidebar">
+            <div class="admin-logo">
+                <img src="../images/logo.png" alt="Matru Bhumi Vandana Trust Logo">
+                <h2>Admin Panel</h2>
+            </div>
+            <nav class="admin-nav">
+                <ul>
+                    <li class="active"><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="#"><i class="fas fa-newspaper"></i> News & Updates</a></li>
+                    <li><a href="#"><i class="fas fa-calendar-alt"></i> Events Management</a></li>
+                    <li><a href="#"><i class="fas fa-image"></i> Gallery</a></li>
+                    <li><a href="#"><i class="fas fa-users"></i> Donors</a></li>
+                    <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="admin-main">
+            <header class="admin-header">
+                <div class="admin-header-left">
+                    <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+                </div>
+                <div class="admin-header-right">
+                    <div class="admin-user">
+                        <img src="https://via.placeholder.com/40" alt="Admin User">
+                        <span>Admin User</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </header>
+            <main class="admin-content">
+                <div class="admin-welcome">
+                    <h1>Dashboard</h1>
+                    <p>Welcome back! Here's what's happening with your website today.</p>
+                </div>
+                
+                <div class="admin-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>1,245</h3>
+                            <p>Visitors</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-rupee-sign"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>₹1,45,678</h3>
+                            <p>Donations</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>24</h3>
+                            <p>Upcoming Events</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>56</h3>
+                            <p>New Messages</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="admin-sections">
+                    <section class="admin-section">
+                        <h2>Recent Activities</h2>
+                        <div class="activity-list">
+                            <div class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-user-plus"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <p><strong>New donor registered</strong> - John Doe donated ₹5,000</p>
+                                    <small>2 hours ago</small>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-calendar-plus"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <p><strong>New event added</strong> - Janta Raja Natak 2025</p>
+                                    <small>5 hours ago</small>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <p><strong>New message received</strong> - From Jane Smith</p>
+                                    <small>1 day ago</small>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <section class="admin-section">
+                        <h2>Quick Actions</h2>
+                        <div class="quick-actions">
+                            <a href="#" class="quick-action">
+                                <i class="fas fa-plus"></i>
+                                <span>Add New Event</span>
+                            </a>
+                            <a href="#" class="quick-action">
+                                <i class="fas fa-upload"></i>
+                                <span>Upload Images</span>
+                            </a>
+                            <a href="#" class="quick-action">
+                                <i class="fas fa-edit"></i>
+                                <span>Edit Home Page</span>
+                            </a>
+                            <a href="#" class="quick-action">
+                                <i class="fas fa-chart-line"></i>
+                                <span>View Analytics</span>
+                            </a>
+                        </div>
+                    </section>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>
